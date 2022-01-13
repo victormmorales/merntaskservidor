@@ -4,7 +4,8 @@
   "description": "MERN API para MERNTasks",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "author": "Víctor Ruiz",
   "license": "ISC",
