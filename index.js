@@ -1,1 +1,4 @@
-console.log('desde index.js')
+const express = require('express');
+
+//crear servidor
+const app = express();
