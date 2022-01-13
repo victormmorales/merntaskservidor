@@ -1,7 +1,11 @@
 const express = require('express');
+const conectarDB = require('./config/db');
 
 //crear servidor
 const app = express();
+
+//Conectar DB
+conectarDB();
 
 //Puerto del servidor
 const PORT = process.env.PORT || 4000;
