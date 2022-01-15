@@ -7,10 +7,12 @@ const ProyectoSchema = mongoose.Schema({
         trim: true
     },
     creador: {
-
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Usuario'
     },
     creado: {
-        
+        type: Date,
+        default: Date.now()
     }
 });
 
