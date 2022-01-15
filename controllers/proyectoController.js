@@ -4,6 +4,11 @@ exports.crearProyecto = (req, res) => {
     try {
         //Crear proyectos
         const proyecto = new Proyecto(req.body);
+
+        //guardar creador con jwt
+        proyecto.creador = req.usuario.id
+
+        //guardar proyecto
         proyecto.save();
         res.json(proyecto)
         
