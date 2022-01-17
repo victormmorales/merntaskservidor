@@ -51,7 +51,7 @@ exports.actualizarProyecto = async (req, res) => {
     const nuevoProyecto = {};
 
     if(nombre){
-        nuevoProyecto.nombre = nombre;
+        nuevoProyecto.nombre = nombre
     }
 
     try {
