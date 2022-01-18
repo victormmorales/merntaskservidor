@@ -51,7 +51,7 @@ exports.actualizarProyecto = async (req, res) => {
     const nuevoProyecto = {};
 
     if(nombre){
-        nuevoProyecto.nombre = nombre
+        nuevoProyecto.nombre = nombre;
     }
 
     try {
@@ -65,8 +65,14 @@ exports.actualizarProyecto = async (req, res) => {
         }
 
         //verificar creador
+        if(proyecto.creador.toString() !== req.usuario.id){
+            return res.status(401).json({ msg: 'No autorizado'});
+        }
 
         //actualizar
+        proyecto = await Proyecto.findByIdAndUpdate({_id: req.params.id}, {$set: nuevoProyecto}, {new: true});
+
+        res.json({ proyecto });
         
     } catch (error) {
         console.log(error);
